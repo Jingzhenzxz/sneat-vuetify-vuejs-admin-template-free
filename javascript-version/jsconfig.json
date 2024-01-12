@@ -1,4 +1,8 @@
+// 这个文件是项目的配置文件，用于指导代码编辑器和其他工具如何处理项目中的代码。
 {
+  // include: 这个部分列出了应该被包括在项目中的文件和文件夹。
+  // 在这个例子中，它包含了各种配置文件和项目的源代码。
+  // 例如，src/**/* 意味着包括 src 文件夹下的所有文件和子文件夹。
   "include": [
     "vite.config.*",
     "env.d.js",
@@ -9,17 +13,25 @@
     "auto-imports.d.js",
     "componenjs.d.js"
   ],
+  // exclude: 这里指定了哪些文件或文件夹应该从项目中排除。
+  // 通常，这包括像 node_modules 这样的依赖文件夹和构建输出文件夹（如 dist）。
   "exclude": [
     "dist",
     "node_modules",
     "src/@iconify/*"
   ],
+  // compilerOptions: 这部分包含了一系列的编译器选项和设置，指导如何处理项目中的 JavaScript 代码。
   "compilerOptions": {
+    // baseUrl: 设置基本目录，用于解析非相对模块名。在这里，它被设置为 "./"，意味着当前目录。
     "baseUrl": "./",
+    // target 和 module: 指定 ECMAScript 目标版本和模块系统（这里都是 esnext）。
     "target": "esnext",
     "module": "esnext",
+    // moduleResolution: 模块解析策略，这里是 node，符合 Node.js 的模块解析方式。
     "moduleResolution": "node",
+    // jsx: 定义如何处理 JSX，一个用于 React 的语法扩展，这里被设置为 preserve。
     "jsx": "preserve",
+    // paths: 提供了一个路径别名映射，使得可以使用简短的路径名来引用文件。例如，@/* 映射到 src/*。
     "paths": {
       "@/*": [
         "src/*"
@@ -43,6 +55,7 @@
         "src/styles/*"
       ]
     },
+    // types: 指定项目包括的类型声明文件或包。在这个例子中，它包括了与 Vite 相关的类型声明。
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
