@@ -1,7 +1,10 @@
 <script setup>
+// 这可能是一个用于展示不同身份验证提供者（如 Google, Facebook 登录等）的组件
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
+// 从项目的图片资源中导入了一个 logo，并使用 ?raw 来直接获取 SVG 内容
 import logo from '@images/logo.svg?raw'
 
+// 使用 Vue 的 ref 函数创建了一个响应式对象，用于存储表单数据，包括用户的电子邮件、密码和记住我选项
 const form = ref({
   email: '',
   password: '',
