@@ -1,3 +1,10 @@
+// 这些规则用于在 SCSS (Sassy CSS) 中引入其他样式文件或 CSS 文件。
+// @use 是一个 Sass 功能，用于加载其他 Sass 模块，同时避免命名冲突和提供更好的封装
+// 在 SCSS 中，以下划线 _ 开头的文件名意味着这是一个部分文件（partial），
+// 它不会被单独编译成 CSS 文件，而是被其他 SCSS 文件引用。
 @use "_global";
+// vue3-perfect-scrollbar 是一个基于 Vue 3 的滚动条插件，提供了自定义滚动条的样式和行为。
+// 这里直接使用 @use 来引入一个 CSS 文件是比较不常见的，
+// 因为 @use 通常用于引入 Sass 文件。但是，如果配置适当，Sass 编译器也可以处理这种情况。
 @use "vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.min.css";
 @use "_classes";

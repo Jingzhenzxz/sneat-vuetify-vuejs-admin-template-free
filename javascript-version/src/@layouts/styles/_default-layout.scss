@@ -1,34 +1,45 @@
 // These are styles which are both common in layout w/ vertical nav & horizontal nav
+// 使用 @use 指令导入其他 SCSS 文件，这可能包括用于处理从左至右（RTL）文本方向、占位符样式和一些定义好的 mixins。
 @use "@layouts/styles/rtl";
 @use "@layouts/styles/placeholders";
 @use "@layouts/styles/mixins";
+// 这行导入了一些配置的变量，并使用 as variables 为它们设置了一个命名空间，以便在后面的代码中使用。
 @use "@configured-variables" as variables;
 
+// 设置了 HTML 和 body 元素的最小块大小为 100%，这通常用于确保这些元素至少覆盖整个视口高度
 html,
 body {
   min-block-size: 100%;
 }
 
+// 定义了页面内容的布局样式
 .layout-page-content {
+  // 使用了一个名为 boxed-content 的 mixin，可能用于设置有关边框或容器样式。
   @include mixins.boxed-content(true);
 
+  // 使元素能够在其容器中伸展以占用任何额外的空间
   flex-grow: 1;
 
   // TODO: Use grid gutter variable here
+  // 设置垂直方向的内边距
   padding-block: 1.5rem;
 }
 
+// 定义了页脚的样式
 .layout-footer {
+  // 设置页脚容器的块大小，使用了之前导入的变量
   .footer-content-container {
     block-size: variables.$layout-vertical-nav-footer-height;
   }
 
+  // 定义了一个“粘性”页脚，使其固定在视口的底部
   .layout-footer-sticky & {
     position: sticky;
     inset-block-end: 0;
     will-change: transform;
   }
 
+  // 当页面需要隐藏页脚时应用此样式
   .layout-footer-hidden & {
     display: none;
   }

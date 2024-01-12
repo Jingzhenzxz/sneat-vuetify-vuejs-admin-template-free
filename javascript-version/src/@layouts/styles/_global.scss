@@ -1,10 +1,20 @@
+// * 选择所有元素。
 *,
+// ::before 选择所有元素的 ::before 伪元素。
 ::before,
+// ::after 选择所有元素的 ::after 伪元素。
 ::after {
+  // box-sizing: inherit;: 这个属性的值设置为 inherit，意味着所有元素（包括 ::before 和 ::after 伪元素）
+  // 将从它们的父元素继承 box-sizing 属性。这是一种常见的做法，以确保整个文档的盒模型行为一致。
   box-sizing: inherit;
+  // background-repeat: no-repeat;: 这个属性设置为 no-repeat，意味着所有元素
+  // （包括 ::before 和 ::after 伪元素）的背景图像不会重复。这对于需要精确控制背景图像如何显示的情况非常有用。
   background-repeat: no-repeat;
 }
 
 html {
+  // box-sizing: border-box;: 这个属性的值设置为 border-box，意味着 html 元素（以及由于继承，文档中的所有元素）
+  // 的宽度和高度属性将包括内容、内边距和边框，但不包括外边距。
+  // 这与默认的 content-box 值不同，在 content-box 模式下，宽度和高度只包括内容的大小。
   box-sizing: border-box;
 }
