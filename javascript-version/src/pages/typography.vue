@@ -1,5 +1,6 @@
 <template>
   <VRow>
+    <!-- 不加 cols=12 也可以，默认就是12 -->
     <VCol cols="12">
       <VCard title="Headlines">
         <VCardText class="d-flex flex-column gap-y-8">
